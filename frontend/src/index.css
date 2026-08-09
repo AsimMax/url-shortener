@@ -1,0 +1,39 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  @apply bg-ink text-ivory font-body antialiased;
+  background-image: theme('backgroundImage.radial-glow');
+  background-attachment: fixed;
+}
+
+::selection {
+  background: theme('colors.amber.DEFAULT');
+  color: theme('colors.ink.DEFAULT');
+}
+
+/* Visible keyboard focus, always */
+:focus-visible {
+  outline: 2px solid theme('colors.teal.DEFAULT');
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+.text-glow {
+  text-shadow: 0 0 40px rgba(242, 184, 75, 0.25);
+}
